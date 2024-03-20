@@ -1,18 +1,19 @@
 import inquirer from "inquirer";
+import chalk from "chalk";
 
 const answer = await inquirer.prompt([
-  { message: "Enter first number", type: "number", name: "firstNumber" },
-  { message: "Enter Second number", type: "number", name: "secondNumber" },
+  { message: ((chalk.bold)("Enter first number")), type: "number", name: ((chalk.blue)("firstNumber")) },
+  { message: ((chalk.bold)("Enter Second number")), type: "number", name: ((chalk.red)("secondNumber")) },
   {
     message: "Select one of the operator to perform operation",
     type: "list",
     name: "operator",
-    choices: [ "Addition",
+    choices: [((chalk.bold)("Addition",
                "Subtraction",
                "Multiplication",
                "Division",
                "Modulus",
-               "Exponention" ],
+               "Exponention")) ],
   },
 ]);
 
