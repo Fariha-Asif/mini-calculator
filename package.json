@@ -1,5 +1,5 @@
 {
-  "name": "01-project-mini-calculator",
+  "name": "01-cli-mini-calculator",
   "version": "1.0.0",
   "description": "A simple calculator with Typescript, Node.js and Inquirer",
   "main": "index.js",
