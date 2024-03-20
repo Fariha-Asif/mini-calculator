@@ -2,33 +2,41 @@ import inquirer from "inquirer";
 import chalk from "chalk";
 
 const answer = await inquirer.prompt([
-  { message: ((chalk.bold)("Enter first number")), type: "number", name: ((chalk.blue)("firstNumber")) },
-  { message: ((chalk.bold)("Enter Second number")), type: "number", name: ((chalk.red)("secondNumber")) },
+  {
+    message: chalk.white.bold.italic("Enter first number"),
+    type: "number",
+    name: chalk.blue.bold.italic("Number-1"),
+  },
+  {
+    message: chalk.white.bold.italic("Enter Second number"),
+    type: "number",
+    name: chalk.red.bold.italic("Number-2"),
+  },
   {
     message: "Select one of the operator to perform operation",
     type: "list",
     name: "operator",
-    choices: [((chalk.bold)("Addition",
+    choices: [ "Addition",
                "Subtraction",
                "Multiplication",
                "Division",
                "Modulus",
-               "Exponention")) ],
+               "Exponention"],
   },
 ]);
 
 if (answer.operator === "Addition") {
-  console.log(answer.firstNumber + answer.secondNumber);
-} else if (answer.operator === "Subtration") {
-  console.log(answer.firstNumber - answer.secondNumber);
+  console.log(answer.Number-1 + answer.Number-2);
+} else if (answer.operator === "Subtraction") {
+  console.log(answer.Number-1 - answer.Number-2);
 } else if (answer.operator === "Multiplication") {
-  console.log(answer.firstNumber * answer.secondNumber);
+  console.log(answer.Number-1 * answer.Number-2);
 } else if (answer.operator === "Division") {
-  console.log(answer.firstNumber / answer.secondNumber);
+  console.log(answer.Number-1 / answer.Number-2);
 } else if (answer.operator === "Modulus") {
-  console.log(answer.firstNumber % answer.secondNumber);
+  console.log(answer.Number-1 % answer.Number-2);
 } else if (answer.operator === "Exponention") {
-  console.log(answer.firstNumber ** answer.secondNumber);
+  console.log(answer.Number-1 ** answer.Number-2);
 } else {
   console.log("Please Select Valid Operator.");
 }
